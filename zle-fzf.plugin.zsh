@@ -40,18 +40,12 @@ function _fuzzy-insert-recent-dir {
     zle reset-prompt
 }
 
-function bindkey-global {
-    for map ($_used_maps); do
-        bindkey -M $map $*
-    done
-}
-
 zle -N _fuzzy-insert-command
 zle -N _fuzzy-insert-filename
 zle -N _fuzzy-insert-variable
 zle -N _fuzzy-insert-recent-dir
 
-bindkey-global '^[x' _fuzzy-insert-command
-bindkey-global '^[f' _fuzzy-insert-filename
-bindkey-global '^[v' _fuzzy-insert-variable
-bindkey-global '^[d' _fuzzy-insert-recent-dir
+bindkey '^[x' _fuzzy-insert-command
+bindkey '^[f' _fuzzy-insert-filename
+bindkey '^[v' _fuzzy-insert-variable
+bindkey '^[d' _fuzzy-insert-recent-dir
